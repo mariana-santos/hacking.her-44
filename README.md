@@ -9,7 +9,7 @@ O projeto é divido em três partes:
 Antes de mais nada, clone o repositório e navegue até sua pasta:
 
 ```bash
-$ git clone https://github.com/mariana-santos/hacking.her-44 && cd hacking.her-44 
+git clone https://github.com/mariana-santos/hacking.her-44 && cd hacking.her-44 
 ```
 
 ## Front-end
@@ -17,15 +17,15 @@ $ git clone https://github.com/mariana-santos/hacking.her-44 && cd hacking.her-4
 Na pasta do projeto, navegue até a pasta "web"
 
 ```bash
-$ cd web
+cd web
 ```
 
 Instale as dependências
 ```bash
-$ npm install
+npm install
 ```
 
 Inicie o projeto localmente
 ```bash
-$ npm run dev
+npm run dev
 ```
