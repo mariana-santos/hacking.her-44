@@ -1,4 +1,4 @@
-# hacking.her-44
+# hacking.her-44: Futura Dev
 
 O projeto é divido em três partes:
 
@@ -14,15 +14,13 @@ git clone https://github.com/mariana-santos/hacking.her-44 && cd hacking.her-44
 
 ## Banco de dados
 
-Certifiqu-se de ter o banco de dados <strong>MySQL</strong> na sua máquina. 
+Certifique-se de ter o banco de dados <strong>MySQL</strong> na sua máquina. 
 Feito isso, inicie o um banco com o usuário "root" e sem senha.
 
 Rode os scripts de criação e inserção de dados na pasta "db"
 
 ## Back-end
-Com tudo feito no banco de dados, rode o comando
-
-Navegue até a pasta da api
+Com tudo feito no banco de dados, navegue até a pasta da api
 
 ```bash
   cd api

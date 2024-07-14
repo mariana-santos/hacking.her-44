@@ -62,6 +62,42 @@ INSERT INTO course (id, title, description, link, image, id_career_option) VALUE
 (3, 'Fotografia: composição e linguagem', 'Você aprenderá a usar técnicas e recursos para produzir ensaios fotográficos de qualidade, além de pesquisar referências e linguagens de fotografia para construir seu repertório.', 'https://www.sp.senac.br/cursos-livres/curso-de-fotografia-composicao-e-linguagem', null, 2),
 (4, 'Desenho Técnico', 'Você aprenderá a fazer desenhos técnicos manualmente para projetos de arquitetura, engenharia, design de interiores e de produto.', 'https://www.sp.senac.br/cursos-livres/curso-de-desenho-tecnico', null, 2);
 
+-- Quiz avançado
+INSERT INTO question VALUES (6, "Você gosta de lidar com grandes volumes de dados?", "Isso pode incluir lidar com padrões de dados, modificação, limpeza de dados...", null, 2);
+INSERT INTO question VALUES (7, "Você prefere trabalhar em tarefas que envolvam design e criatividade?", "Considere atividades que exigem inovação e pensamento visual.", null, 2);
+INSERT INTO question VALUES (8, "Você se interessa por infraestrutura e como os sistemas funcionam em segundo plano?", "Pense em atividades relacionadas à administração de sistemas e redes.", null, 2);
+INSERT INTO question VALUES (9, "Você se sente confortável mexendo com peças de eletrônicos ou mantendo qualquer tipo de eletrônico?", "Considere a instalação, reparo e manutenção de coisas do seu dia-a-dia.", null, 2);
+INSERT INTO question VALUES (10, "Você gosta de desenvolver aplicações e solucionar problemas de lógica complexa?", "Pense em atividades de programação e desenvolvimento de software.", null, 2);
+
+INSERT INTO question_option (description, points, id_question) VALUES 
+("Sim, gosto muito", 3, 6),
+("Gosto às vezes", 2, 6),
+("Indiferente", 1, 6),
+("Não gosto", 0, 6);
+
+INSERT INTO question_option (description, points, id_question) VALUES 
+("Sim, gosto muito", 3, 7),
+("Gosto às vezes", 2, 7),
+("Indiferente", 1, 7),
+("Não gosto", 0, 7);
+
+INSERT INTO question_option (description, points, id_question) VALUES 
+("Sim, gosto muito", 3, 8),
+("Gosto às vezes", 2, 8),
+("Indiferente", 1, 8),
+("Não gosto", 0, 8);
+
+INSERT INTO question_option (description, points, id_question) VALUES 
+("Sim, gosto muito", 3, 9),
+("Gosto às vezes", 2, 9),
+("Indiferente", 1, 9),
+("Não gosto", 0, 9);
+
+INSERT INTO question_option (description, points, id_question) VALUES 
+("Sim, gosto muito", 3, 10),
+("Gosto às vezes", 2, 10),
+("Indiferente", 1, 10),
+("Não gosto", 0, 10);
 
 INSERT INTO career_option (title, description, id_image) VALUES
 ("DevOps ou Redes", "Ótimo resultado! É uma área ampla com atuação em infraestrutura de TI, automação de processos e gerenciamento de redes.", NULL),
@@ -69,6 +105,15 @@ INSERT INTO career_option (title, description, id_image) VALUES
 ("Manutenção ou Hardware", "Você prefere a mão na massa! Nessa área as funções incluem a manutenção e suporte técnico de hardware de computadores e periféricos.", NULL),
 ("Designer/UX ou Desenvolvedor Front-End", "Você é criativo! Combina com design de interfaces de usuário ou desenvolvimento de aplicações web.", NULL),
 ("Desenvolvedor Back-End", "Seu perfil é lógico! Procure sobre desenvolvimento de sistemas e lógica de funcionamento de aplicações.", NULL);
+
+select * from career_option;
+
+INSERT INTO result (min_points, max_points, id_quiz, id_career_option) VALUES 
+(1, 6, 2, 3),  -- DevOps ou Redes
+(7, 12, 2, 4), -- DBA ou Data Science
+(13, 18, 2, 5), -- Manutenção ou Hardware
+(19, 24, 2, 6), -- Designer/UX ou Desenvolvedor Front-End
+(25, 30, 2, 7); -- Desenvolvedor Back-End
 
 
 INSERT INTO course (title, description, link, image, id_career_option) VALUES 
