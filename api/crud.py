@@ -39,6 +39,9 @@ def get_quiz(db: Session, quiz_id: int):
 def get_quizzes(db: Session, skip: int = 0, limit: int = 100):
   return db.query(models.Quiz).offset(skip).limit(limit).all()
 
+def get_quizzes_by_quiz_type_slug(db: Session, quiz_type_slug: str):
+  return db.query(models.Quiz).join(models.QuizType).filter(models.QuizType.slug == quiz_type_slug).all()
+
 def create_quiz(db: Session, quiz: schemas.QuizCreate):
   db_quiz = models.Quiz(**quiz.dict())
   db.add(db_quiz)

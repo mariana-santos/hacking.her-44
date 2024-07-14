@@ -12,6 +12,28 @@ Antes de mais nada, clone o repositório e navegue até sua pasta:
 git clone https://github.com/mariana-santos/hacking.her-44 && cd hacking.her-44 
 ```
 
+## Banco de dados
+
+Certifiqu-se de ter o banco de dados <strong>MySQL</strong> na sua máquina. 
+Feito isso, inicie o um banco com o usuário "root" e sem senha.
+
+Rode os scripts de criação e inserção de dados na pasta "db"
+
+## Back-end
+Com tudo feito no banco de dados, rode o comando
+
+Navegue até a pasta da api
+
+```bash
+  cd api
+```
+
+E então rode o servidor local
+
+```bash
+  python -m uvicorn main:app --reload
+```
+
 ## Front-end
 
 Na pasta do projeto, navegue até a pasta "web"

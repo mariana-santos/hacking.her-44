@@ -1,8 +1,124 @@
 .main {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   padding: 6rem;
   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: bottom;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffeaf7' fill-opacity='1' d='M0,192L48,202.7C96,213,192,235,288,240C384,245,480,235,576,218.7C672,203,768,181,864,186.7C960,192,1056,224,1152,245.3C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.main h1 {
+  font-size: 4rem;
+  margin-bottom: .5em;
+}
+
+.main h1 span {
+  font-weight: bolder;
+  color: #7461f3;
+}
+
+.mainPicture {
+  position: relative;
+}
+
+.mainPicture img {
+  width: 400px;
+  max-width: 100%;
+}
+
+.mainPicture::before {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg width='282' height='263' viewBox='0 0 282 263' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M200.796 19.659C227.568 26.2565 262.1 31.1575 275.098 48.688C287.902 66.2185 279.366 96.19 273.74 126.162C268.308 155.945 266.174 185.539 249.102 200.431C232.224 215.322 200.408 215.322 169.95 227.198C139.686 239.073 110.78 262.824 84.59 262.447C58.4 261.882 34.926 237.188 19.6 210.61C4.468 184.22 -2.71 155.945 2.14 131.44C6.796 106.746 23.286 85.8225 36.284 65.276C49.088 44.7295 58.4 24.56 74.502 13.0615C90.604 1.7515 113.302 -1.076 134.06 1.7515C155.012 4.579 174.024 12.873 200.796 19.659Z' fill='%23D9CEFF' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(1.3);
+}
+
+.container p {
+  font-size: 1.3rem;
+  margin-bottom: .5em;
+}
+
+.container p:last-of-type {
+  margin-bottom: 4rem;
+}
+
+.container h2 {
+  font-size: 3rem;
+  margin-bottom: .5em;
+}
+
+.description {
+  max-width: 60%;
+}
+
+.cause {
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+.cause__content {
+  padding: 6rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background-color: #ffeaf7;
+}
+
+.cause__content p {
+  max-width: 800px;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  padding: 0 6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffeaf7' fill-opacity='1' d='M0,192L80,176C160,160,320,128,480,128C640,128,800,160,960,165.3C1120,171,1280,149,1360,138.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");  
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 200px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 10rem 2rem;
+  }
+
+  .description {
+    max-width: unset;
+  }
+
+  .main h1 {
+    font-size: 3rem;
+  }
+
+  .container p {
+    font-size: 1.1rem;
+  }
+
+  .cause__content {
+    padding: 2rem;
+  }
+
+  .cards {
+    padding: 0 2rem;
+    padding-bottom: 100px;
+  }
 }

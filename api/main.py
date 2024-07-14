@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
 import crud
@@ -9,6 +10,11 @@ from database import SessionLocal, engine
 models.Base.metadata.create_all(bind = engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
 
 # Dependency to get the database session
 def get_db():
@@ -71,6 +77,14 @@ def read_quiz(quiz_id: int, db: Session = Depends(get_db)):
     if db_quiz is None:
         raise HTTPException(status_code = 404, detail = "Quiz not found")
     return db_quiz
+
+# Endpoint para buscar um quizzes pelo slug do tipo
+@app.get("/quizzes/by-type/{quiz_type_slug}/", response_model=List[schemas.Quiz])
+def read_quizzes_by_quiz_type_slug(quiz_type_slug: str, db: Session = Depends(get_db)):
+  quizzes = crud.get_quizzes_by_quiz_type_slug(db, quiz_type_slug=quiz_type_slug)
+  if not quizzes:
+    raise HTTPException(status_code=404, detail="Quizzes not found for the given quiz type slug")
+  return quizzes
 
 
 # Endpoint para criar uma nova questão

@@ -1,0 +1,28 @@
+.primaryButton {
+  color: var(--background-color);
+  padding: 1rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  background: #fd37a0;
+  font-weight: 700;
+  transition: .3s;
+  display: inline-block;
+}
+
+.primaryButton:hover {
+  background: #7e1164;
+}
+
+.secondaryButton {
+  color: var(--background-color);
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius-small);
+  background: #6340e7;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.secondaryButton:hover {
+  opacity: .8;
+}
